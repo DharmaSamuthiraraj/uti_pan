@@ -1,0 +1,43 @@
+/* Rupee */
+@font-face {
+    font-family: 'webrupeebook';
+    src: url('../fonts/webrupee.eot');
+    src: url('../fonts/webrupeed41d.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/webrupee.woff') format('woff'),
+         url('../fonts/webrupee.ttf') format('truetype'),
+         url('../fonts/webrupee.svg#webrupeebook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.rupee {font-family:'webrupeebook';}
+.rupee-sym{font-family: 'webrupeebook'; margin-right:1px;}
+.rupee-gpro{font-family: 'webrupeebook'; margin-right:-2px; -margin-right:-6px; color:#808080;}
+.table-rupee{font-family: 'webrupeebook'; margin-right:-0px; -margin-right:-1px;}
+.cart-rupee{font-family: 'webrupeebook'; color:#d20c14;}
+.rupee-lpro{font-family: 'webrupeebook'; margin-right:-2px; -margin-right:-6px; color:#7b7b7b;}
+.rupee-cpro{font-family: 'webrupeebook'; margin-right:-1px; -margin-right:-6px; color:#bb0000;}
+
+/* Heading */
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/RobotoCondensed.eot');
+    src: url('../fonts/RobotoCondensedd41d.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/RobotoCondensed.woff') format('woff'),
+         url('../fonts/RobotoCondensed.ttf') format('truetype'),
+         url('../fonts/RobotoCondensed.svg#Roboto Condensed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Content */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.eot');
+    src: url('../fonts/Roboto-Regulard41d.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Regular.woff') format('woff'),
+         url('../fonts/Roboto-Regular.ttf') format('truetype'),
+         url('../fonts/Roboto-Regular.svg#Roboto') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

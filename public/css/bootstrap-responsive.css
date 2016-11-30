@@ -1,0 +1,60 @@
+@media only screen and (max-width: 1023px){
+.free-trail-menu{display:none;}
+.navbar-nav>li>a {padding: 10px 12px; font-size: 12px;}
+}
+
+@media only screen and (max-width: 767px) {
+.navbar-header {display: inline-flex; padding:0 0 10px; }
+.navbar-nav{ margin:0 -15px;}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{background-color:transparent; border:none; border-radius:0;}
+.navbar-default .navbar-toggle{border:none; margin-right: 8px; margin-top:0;}
+.navbar-default .navbar-toggle .icon-bar{background-color:#0c77bd;}
+.navbar-default .navbar-collapse{ position:absolute; left:0; right:0;}
+.dropdown-menu {background: #094773 !important;}
+.navbar-brand img{max-width:75%; height:auto;}
+.popup-form .popup-reg-text{border-left:none; border-top: 1px dashed #dcdcdc; padding-top:15px; margin-top:10px; padding-left: 0;}
+.header-links{ margin-right:15px;}
+.page-wrapper{margin-top:0; margin-bottom:30px}
+.table-responsive{border:none;}
+.st-key { font-weight:bold; }
+.performance-page .table-responsive{border: 1px solid #dcdcdc; border-top:none;}
+.performance-page .st-head-row-main{ display:none;}
+.performance-page .st-head-row > span{float:right;}
+.service-item .select-option{width: 60%;}
+.service-item .subscription-price{width: 40%;}
+.service-content-block .page-heading, .block-header-wrapper .title{ margin-left:15px;}
+.service-details-block .subscription-text{width: 100%; padding-left: 15px;}
+.sidebar-menu{ margin-top:20px;}
+.block-header-wrapper {padding-bottom: 25px; padding-top: 25px;}
+.pad-l-50 {padding-left: 15px;}
+.quick-links ul li{margin: 0 4px;}
+.inner-wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+}
+.sidebar-block {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    box-ordinal-group: 2;
+}
+.content-block {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    box-ordinal-group: 1;
+}
+.free-trail-menu{ display:none;} 
+}
+
+@media only screen and (min-width: 1024px{
+.row.table-row {display:table; width:100%; margin:0 auto;}
+.row.table-row > [class*="col-"] {float:none; display:table-cell; vertical-align:top;}
+.row.table-row > .col-sm-6 {width: 50%;}
+}
+
+@media only screen and (max-width: 1023px){
+  .row.table-row > .col-sm-6 {width: 100%;}
+}
