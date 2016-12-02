@@ -140,47 +140,19 @@ full = document.getElementById("full");
 full.value = first.value + ' ' + last.value;
 }
 </script>
-<script>
-    function cTrig(#premiumsupport) { 
-      if (document.getElementsById(#premiumsupport)[0].checked == true) {
-        return false;
-      } else {
-       var box= confirm("Are you sure, you want to disable premium support?");
-        if (box==true)
-            return true;
-        else
-           document.getElementsById(#premiumsupport)[0].checked = true;
-            
-      }
-    }
-	
-	
-	
-</script>
-<script>
-$('#premiumsupport').on('click', function(){
-    if ( $(this).is(':checked')) {
-        $('#price1').show();
-		$('#price2').hide();
-		$('#price3').show();
-		$('#price4').hide();
-    } 
-    else {
-        $('#price2').show();
-		$('#price1').hide();
-		$('#price3').hide();
-		$('#price4').show();
-    }
 
-	
-	
-	
+
+<script>
+$(document).ready(function()
+{
+    // Grabs each text in the textareas based on the id, added spaces in between.
+    var text = $("#first").text() + " " + $("#middle").text() + " " + $("#last").text();
+    
+    // Appends the text to box4.
+    $("#app_name").text( text );
 });
-
-
-
-
 </script>
+
 <script>
 function copyText2() {
 textBox2 = document.getElementById("last");
@@ -189,6 +161,8 @@ message2.value = textBox2.value;
 }
 
 </script>
+
+
 <script>
 			$(document).ready(function() {
 				$.dobPicker({
@@ -203,3 +177,116 @@ message2.value = textBox2.value;
 				});
 			});
 		</script>
+
+    <script>
+  $(document).ready(function() {
+   $(document).on('change','#residencedistrict',function(){
+      replacecityresid();
+  });
+  editcustomerdetails();
+  
+</script>
+
+<script>
+
+$('#premiumsupport').change(function(){
+    if($("#premiumsupport").prop('checked') == false)
+    {
+        var i = window.confirm("Do you want remove Premium Support?");
+        if(i == false)
+        {
+            $("#premiumsupport").prop('checked', true);
+            $('#price1').show();
+            $('#price2').hide();
+            $('#price3').show();
+            $('#price4').hide();
+        }
+        else
+        {
+            $("#premiumsupport").prop('checked', false);
+            $('#price2').show();
+            $('#price1').hide();
+            $('#price3').hide();
+            $('#price4').show();
+        }
+
+
+
+    }
+ else if($("#premiumsupport").prop('checked') == true)
+
+  {
+         
+            $('#price1').show();
+            $('#price2').hide();
+            $('#price3').show();
+            $('#price4').hide();
+        }
+
+});
+
+
+</script>
+<script>
+
+function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+function getActualFullDate() {
+    var d = new Date();
+    var day = addZero(d.getDate());
+    var month = addZero(d.getMonth()+1);
+    var year = addZero(d.getFullYear());
+    var h = addZero(d.getHours());
+    var m = addZero(d.getMinutes());
+    var s = addZero(d.getSeconds());
+    return day + ". " + month + ". " + year + " (" + h + ":" + m + ")";
+}
+function getActualHour() {
+    var d = new Date();
+    var h = addZero(d.getHours());
+    var m = addZero(d.getMinutes());
+    var s = addZero(d.getSeconds());
+    return h + ":" + m + ":" + s;
+}
+
+function getActualDate() {
+    var d = new Date();
+    var day = addZero(d.getDate());
+    var month = addZero(d.getMonth()+1);
+    var year = addZero(d.getFullYear());
+    return day + ". " + month + ". " + year;
+}
+
+$(document).ready(function(){
+    $("#full").html(getActualFullDate());
+    $("#hour").html(getActualHour());
+    $("#date").html(getActualDate());
+});
+
+
+</script>
+
+<script>
+/* INPUT TEXT_1 AND TEXT_2 VALUE TO TEXT_3 ON TEXT_1 KEYUP*/
+$("#text_1").change(function() {
+    $("#text_3").val($("#text_1").val() + " " + $("#text_2").val()).change();
+})
+
+/* INPUT TEXT_1 AND TEXT_2 VALUE TO TEXT_3 ON TEXT_1 AND TEXT_2 KEYUP*/    
+$("#text_2").change(function(){
+    $("#text_3").val($("#text_1").val() + " " + $("#text_2").val()).change();
+})
+    
+/* HOW CAN I  DETECT IF TEXT_3 WAS CHANGED? IF TEXT_3 VALUE CHANGED, IT MUST BE INPUTTED TO TEXT_4*/
+
+/* not working solution */    
+
+
+
+</script>
+

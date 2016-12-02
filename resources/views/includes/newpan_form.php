@@ -34,7 +34,7 @@
                         <label class="control-label col-xs-3">Category of Applicant <span class="red">*</span></label>
                         <div class="col-xs-6">
                           <label class="radio-inline">
-                          <input type="radio" name="category" value="Individuals" >
+                          <input type="radio" name="category" checked value="Individuals" >
                           Individuals </label>
                           <label class="radio-inline">
                           <input type="radio"  name="category" value="Army" >
@@ -99,11 +99,11 @@
                       <div class="form-group">
                         <label class="control-label col-xs-3">Name on the Pancard <span class="red">*</span>&nbsp;<a href="#" data-tooltip="Full abbreviated name to be printed on Pancard"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
                         <div class="col-xs-6">
-                          <input type="text" class="form-control" name="pancardFirstname" placeholder="First Name"  onchange="upperMe('print_first')" onblur="initialvalidation('print_first');"  autocomplete="off" onkeypress="return lettersOnly(event)">
+                          <input type="text" class="form-control" name="pancardFirstname" placeholder="First Name" id="full"  onchange="upperMe('print_first')" onblur="initialvalidation('print_middle');"  autocomplete="off" onkeypress="return lettersOnly(event)" maxlength="50">
                           <p class="red">(Name on the PAN Card should be based on the name of the applicant)</p>
                         </div>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="pancardLastname" id="printlast"   placeholder="Last Name" onchange="upperMe('print_last')" autocomplete="off" readonly disabled="disabled" onkeypress="return lettersOnly(event)">
+                          <input type="text" class="form-control" name="pancardLastname" id="printlast"   placeholder="Last Name" onchange="upperMe('print_last')" autocomplete="off"  onkeypress="return lettersOnly(event)">
                         </div>
                       </div>
                       <div class="form-group">
@@ -538,9 +538,9 @@
                       <h2>Declaration</h2>
                       
                      <p> I have enclosed <span id="blankline">________________________ </span><span id="prfid" style="text-decoration:underline;display:none;"></span> as proof of identity,<span id="blankline1">________________________ </span> <span id="prfid1" style="text-decoration:underline;display:none;"></span> as proof of address and<span id="blankline2">________________________ </span><span id="prfid3" style="text-decoration:underline;display:none"></span> as proof of date of birth.</p>
-                     <p>I <span id='namepapplicantblank'>________________________</span><span id='namepapplicant' style="text-decoration:underline;display:none"></span>, the applicant, in the capacity of do hereby declare that what is stated above is true to the best of my information and belief.</p>
-<p>Date: 26-Sep-2016 City of residence<span id="blankline4">________________________ </span></p>
-<p class="red-color">* Mandatory. Please ensure the name in the ID Proof matches  (Name of the Applicant). If the name does not match, the application would not be accepted. </p>
+                     <p>I <span id='app_name'>________________________</span>, the applicant, in the capacity of do hereby declare that what is stated above is true to the best of my information and belief.</p>
+<p>Date: <span id='date'></span> City of residence<span id="blankline4">________________________ </span><span id="cityid1" style="text-decoration:underline;display:none;"> </span></p>
+<p class="red-color">* Mandatory. Please ensure the name in the ID Proof matches  <span id='app_name'>________________________</span>. If the name does not match, the application would not be accepted. </p>
 
                       
                       

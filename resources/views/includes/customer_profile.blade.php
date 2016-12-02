@@ -282,7 +282,7 @@
                             <td width="64%"  id="applicationdate">I agree to STMC's Terms of Service</td>
                             <td width="30%"><div align="center">
                                 <button type="submit" class="btn btn-success" value="">Proceed to Payment</button>
-                                <button type="submit" class="btn btn-danger" value="">Edit Form</button>
+                                <a href="newpan" class="btn btn-danger" style="color:#fff;">Edit Form</a>
                               </div></td>
                           </tr>
                         </table>

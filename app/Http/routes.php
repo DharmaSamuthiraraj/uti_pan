@@ -23,6 +23,10 @@ Route::get('/newpan_verify', function () {
     return view('newpan_step2');
 });
 
+Route::get('/newpan_payment', function () {
+    return view('newpan_step3');
+});
+
 Route::get('/panchanges', function () {
     return view('panchanges');
 });

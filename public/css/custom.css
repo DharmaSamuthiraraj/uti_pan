@@ -253,7 +253,7 @@ font-size:18pt;}
 .common-form form{font-family:'Roboto', Arial, Helvetica, sans-serif; font-size:13px;}
 .common-form form p { color:#323232; margin:0 0 5px; padding:0; text-align:left; }
 .common-form form label{ font-weight:normal;}
-.common-form .form-control{ font-size:12px; border-radius: 3px; border:1px solid #dcdcdc; line-height:30px; height:30px; color:#666;  box-shadow: 0 1px 1px rgba(0, 0, 0, 0) inset, 0 0 8px rgba(0, 0, 0, 0);}
+.common-form .form-control{ font-size:12px; border-radius: 3px; border:1px solid #cacaca; line-height:30px; height:30px; color:#666;  box-shadow: 0 1px 1px rgba(0, 0, 0, 0) inset, 0 0 8px rgba(0, 0, 0, 0);}
 .common-form textarea.form-control{ font-size:12px; border:1px solid #dcdcdc; line-height:20px; height:238px; color:#323232; border-radius:2px; background:#fff;}
 .common-form .form-btn{ text-align:center;}
 .common-form .form-btn .eq-button{ margin:10px 0; color:#fff; padding:6px 20px;}
@@ -911,3 +911,5 @@ p.list-description {
   .dis_table tr td { border:solid 1px #cacaca; padding:4px 10px;}
   
   .pickup-address {background:#eee; border: solid 1px #e2e2e2; padding:10px;}
+  #full, #printlast {text-transform: uppercase;}
+  

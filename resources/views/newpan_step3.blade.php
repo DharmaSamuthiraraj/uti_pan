@@ -16,19 +16,20 @@
         <div class="row">
           <div class="inner-wrapper">
             <div class="col-xs-12 content-block">
-            <div class="stepwizard">
-              @include('includes.wizzard_header')
-</div>
-            <div class="row setup-content" id="step-1">
-             @include('includes.newpan_form')
-              </div>
+            
+            
               
-              <div class="row setup-content" id="step-2">
+        
+            
           
-              </div>
-              <div class="row setup-content" id="step-3">
-              
-              </div>
+             @include('includes.payment_gateway')
+          
+
+            
+             
+           
+        
+        
               
             </div>
           </div>

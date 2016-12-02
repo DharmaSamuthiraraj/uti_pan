@@ -11,7 +11,7 @@
       <div class="row">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a class="navbar-brand vcenter" title="" href="index.php"><img src="images/logo.jpg" alt="" /></a>
+          <a class="navbar-brand vcenter" title="" href=""><img src="images/logo.jpg" alt="" /></a>
           <div class="header-list vcenter hidden-xs">
           <div class="header-data">
           <div class="header-text">
