@@ -55,14 +55,14 @@
     </div>
   </div>
 </footer>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
-<script type="text/javascript" src="js/owl.carousel.js"></script>
-<script type="text/javascript" src="js/revealmodal.js"></script>
-<script type="text/javascript" src="js/stacktable.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
-<script type="text/javascript" src="js/bootbox.min.js"></script>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="/js/owl.carousel.js"></script>
+<script type="text/javascript" src="/js/revealmodal.js"></script>
+<script type="text/javascript" src="/js/stacktable.js"></script>
+<script type="text/javascript" src="/js/custom.js"></script>
+<script type="text/javascript" src="/js/bootbox.min.js"></script>
 <script src="js/state.js"></script>
 <script src="js/wizard.js"></script>
 <script src="js/dobPicker.min.js"></script>
