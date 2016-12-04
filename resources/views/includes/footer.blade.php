@@ -63,10 +63,10 @@
 <script type="text/javascript" src="/js/stacktable.js"></script>
 <script type="text/javascript" src="/js/custom.js"></script>
 <script type="text/javascript" src="/js/bootbox.min.js"></script>
-<script src="js/state.js"></script>
-<script src="js/wizard.js"></script>
-<script src="js/dobPicker.min.js"></script>
-<script src="js/apply_pan.js"></script>
+<script type="text/javascript" src="/js/state.js"></script>
+<script type="text/javascript" src="/js/wizard.js"></script>
+<script type="text/javascript" src="/js/dobPicker.min.js"></script>
+<script type="text/javascript" src="/js/apply_pan.js"></script>
 <script>
 <!-- //
 function ClearForm(){
@@ -176,15 +176,15 @@ message2.value = textBox2.value;
 					maximumAge: 80 /* Optional */
 				});
 			});
-		</script>
+	</script>
 
-    <script>
-  $(document).ready(function() {
-   $(document).on('change','#residencedistrict',function(){
-      replacecityresid();
-  });
-  editcustomerdetails();
-  
+  <script>
+    $(document).ready(function() {
+       $(document).on('change','#residencedistrict',function(){
+          replacecityresid();
+      });
+      editcustomerdetails();
+   });  
 </script>
 
 <script>

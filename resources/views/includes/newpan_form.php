@@ -24,7 +24,7 @@
     </div>
 			</div>
             <div class="row setup-content" id="step-1">
-<form name="new_pan" id="trial_form" role="form" class="form-horizontal" method="post" action="newpan_step2">
+<form name="new_pan" id="trial_form" role="form" class="form-horizontal" method="post" action="/pan/new">
              
                 <div class="col-xs-12 col-sm-12 col-md-12">
                   <div class="free-trail-form">
@@ -51,15 +51,15 @@
                         <label class="control-label col-xs-3">Applicant Name <span class="red">*</span>&nbsp;<a href="#" data-tooltip="Please Do not use abbreviations in the first and last name / Sur Name"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
                         
                         <div class="col-xs-3">
-                   <input type="text" name="firstName" class="form-control"  placeholder="First Name" required id="first" onchange="upperMe('first')" autocomplete="off" onkeypress="return lettersOnly(event)" onblur="initialvalidation('first');">
+                   <input type="text" name="firstName" class="form-control"  placeholder="First Name" required id="first" onchange="upperMe('first')" autocomplete="off" onblur="initialvalidation('first');">
                           <p class="red">(Name should be exactly as per the ID proof)</p>
                         </div>
                         <div class="col-xs-3">
-                        <input type="text" name="lastName" class="form-control" onkeyUp="copyText2()"  placeholder="Last Name" required id="last" onchange="upperMe('last')" autocomplete="off" onkeypress="return lettersOnly(event)" onblur="initialvalidation('last');">
+                        <input type="text" name="lastName" class="form-control" onkeyUp="copyText2()"  placeholder="Last Name" required id="last" onchange="upperMe('last')" autocomplete="off" onblur="initialvalidation('last');">
                          
                         </div>
                         <div class="col-xs-3">
-  <input type="text" name="middleName" class="form-control" id="middle" onkeyUp="copyText()"   placeholder="Middle Name" required id="middle" onchange="upperMe('middle')" autocomplete="off"  onkeypress="return lettersOnly(event)" onblur="initialvalidation('middle');">
+  <input type="text" name="middleName" class="form-control" id="middle" onkeyUp="copyText()"   placeholder="Middle Name" required id="middle" onchange="upperMe('middle')" autocomplete="off"  onblur="initialvalidation('middle');">
                         </div>
                       </div>
                       <div class="form-group">
@@ -99,7 +99,7 @@
                       <div class="form-group">
                         <label class="control-label col-xs-3">Name on the Pancard <span class="red">*</span>&nbsp;<a href="#" data-tooltip="Full abbreviated name to be printed on Pancard"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
                         <div class="col-xs-6">
-                          <input type="text" class="form-control" name="pancardFirstname" placeholder="First Name" id="full"  onchange="upperMe('print_first')" onblur="initialvalidation('print_middle');"  autocomplete="off" onkeypress="return lettersOnly(event)" maxlength="50">
+                          <input type="text" class="form-control" name="pancardFirstname" placeholder="First Name" id="full"  onchange="upperMe('print_first')" onblur="initialvalidation('print_middle');"  autocomplete="off" maxlength="50">
                           <p class="red">(Name on the PAN Card should be based on the name of the applicant)</p>
                         </div>
                         <div class="col-xs-3">

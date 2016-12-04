@@ -16,21 +16,11 @@
         <div class="row">
           <div class="inner-wrapper">
             <div class="col-xs-12 content-block">
-            
-          
-        		 @include('includes.customer_profile')
-          
-
-        		
-             
-           
-   			
+        		  @include('includes.customer_profile')
             </div>
           </div>
         </div>
       </div>
     </section>
-  </div>
-    
-    
+  </div>    
 @stop

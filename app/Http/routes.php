@@ -15,38 +15,30 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/newpan', function () {
-    return view('newpan_step1');
+Route::get('/contactus', function () {
+    return view('pages.contact');
 });
 
-Route::get('/newpan_verify', function () {
-    return view('newpan_step2');
+Route::get('/documents', function () {
+    return view('pages.document');
 });
 
-Route::get('/newpan_payment', function () {
-    return view('newpan_step3');
-});
 
-Route::get('/panchanges', function () {
-    return view('panchanges');
-});
+Route::group(array('prefix' => 'pan'), function(){
+	
+	Route::get('new', 'PanController@getForm');
 
-Route::get('/damagedpancard', function () {
-    return view('damagedpancard');
-});
+	Route::post('new', 'PanController@storeDetails');
 
-Route::get('/track_pancard', function () {
-    return view('track_pancard');
-});
+	Route::get('verify', 'PanController@verify');
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+	Route::get('track', 'PanController@track');
 
-Route::get('/document', function () {
-    return view('document');
-});
+	Route::get('lost', 'PanController@lostOrDamage');
 
-Route::post('newpan_step2', 'UserController@saveCustomer');
-//Route::get('/newpan/step2', array('as' => 'step2', 'uses' => 'UserController@showProfile'));
+	Route::get('payment', 'PanController@payment');
+
+	Route::get('change', 'PanController@change');
+
+});
 

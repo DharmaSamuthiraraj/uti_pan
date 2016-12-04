@@ -32,8 +32,8 @@
                       <table cellpadding="0" cellspacing="0" width="100%" border="0">
                         <tr>
                           <td><ul class="list">
-                              <li><img src="images/yes.png" border="0" />Basic PAN Card Service <a href="#" data-tooltip="STMC would process your application without any Premium Services"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
-                              <li><img src="images/yes.png" border="0" />Government Prescribed Fee <a href="#" data-tooltip="STMC would process your application without any Premium Services"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
+                              <li><img src="/images/yes.png" border="0" />Basic PAN Card Service <a href="#" data-tooltip="STMC would process your application without any Premium Services"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
+                              <li><img src="/images/yes.png" border="0" />Government Prescribed Fee <a href="#" data-tooltip="STMC would process your application without any Premium Services"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
                               <li>
                                 <input type="checkbox" id="premiumsupport" checked="checked" onclick="change()"  >
                                 </input>
@@ -92,27 +92,26 @@
                         <table border="0" class="dis_table" cellspacing="0" cellpadding="0" width="100%">
                           <tr>
                             <td width="50%">Category of Applicant</td>
-                            <td width="50%" >{{ $customer[0]->category}}</td>
+                            <td width="50%" >{{$customer['category']}}</td>
                           </tr>
                           <tr>
                             <td valign="top">Name of the Applicant</td>
-                            <td>{{ $customer[0]->customer_name}}</td>
+                            <td>{{ $customer['firstName'] . ' '. $customer['middleName'] .' '. $customer['lastName']}}</td>
                           </tr>
                           <tr>
                             <td>Name on the PAN Card</td>
-                            <td >{{ $customer[0]->first_name_on_pancard}}</td>
-                          </tr>
-                          <tr>
-                            <td>Any Other Name</td>
-                            <td>{{ $customer[0]->other_name}}</td>
+                            <td >{{ $customer['pancardFirstname'] .' '. $customer['pancardLastname']}}</td>
+                          <tr> 
+                          <td>Any Other Name</td>
+                            <td></td>
                           </tr>
                           <tr>
                             <td>Father's Name </td>
-                            <td>{{ $customer[0]->father_first_name}}</td>
+                            <td>{{ $customer['fathersFirstname'] .' '.$customer['fathersMiddlename'] . ' ' . $customer['fathersLastname']}}</td>
                           </tr>
                           <tr>
                             <td>Communication Address</td>
-                            <td>{{ $customer[0]->communication_pref}}</td>
+                            <td>{{ $customer['communication']}}</td>
                           </tr>
                           <tr>
                             <td>Annual Income</td>
@@ -128,35 +127,35 @@
                         <table border="0" class="dis_table" cellspacing="0" cellpadding="0" width="100%">
                           <tr>
                             <td width="50%">Date of Birth</td>
-                            <td width="50%">{{ $customer[0]->dob}}</td>
+                            <td width="50%">{{$customer['date'].'-'.$customer['month'].'-'.$customer['year']}}</td>
                           </tr>
                           <tr>
                             <td>Gender</td>
-                            <td>{{ $customer[0]->gender}}</td>
+                            <td>{{ $customer['gender']}}</td>
                           </tr>
                           <tr>
                             <td>Marital Status</td>
-                            <td>{{ $customer[0]->marital_status}}</td>
+                            <td>{{ $customer['maritalStatus']}}</td>
                           </tr>
                           <tr>
                             <td>Mobile </td>
-                            <td>{{ $customer[0]->mobile}}</td>
+                            <td>{{ $customer['mobile']}}</td>
                           </tr>
                           <tr>
                             <td>Email ID </td>
-                            <td>{{ $customer[0]->email}}</td>
+                            <td>{{ $customer['emailId']}}</td>
                           </tr>
                           <tr>
                             <td>Current City of Residence</td>
-                            <td>{{ $customer[0]->city}}</td>
+                            <td>{{ $customer['res_city']}}</td>
                           </tr>
                           <tr>
                             <td>Business Type</td>
-                            <td>{{ $customer[0]->business_or_proffession}}</td>
+                            <td>{{ $customer['incomeSource']}}</td>
                           </tr>
                           <tr>
                             <td>Land Line</td>
-                            <td>{{ $customer[0]->landline}}</td>
+                            <td>{{$customer['std'].'-'.$customer['landLine']}}</td>
                           </tr>
                         </table>
                       </div>
@@ -173,19 +172,19 @@
                         <table border="0" class="dis_table" cellspacing="0" cellpadding="0" width="100%">
                           <tr>
                             <td width="50%">Proof of Identity </td>
-                            <td width="50%">{{ $customer[0]->id_proof}}</td>
+                            <td width="50%">{{$customer['idProof']}}</td>
                           </tr>
                           <tr>
                             <td>Proof of Residence Address </td>
-                            <td>{{ $customer[0]->address_proof}}</td>
+                            <td>{{$customer['Address_Proof']}}</td>
                           </tr>
                           <tr>
                             <td>Proof of Date of Birth</td>
-                            <td>{{ $customer[0]->dob_proof}}</td>
+                            <td>{{$customer['dateOfbirthProof']}}</td>
                           </tr>
                           <tr>
                             <td>Proof of Office Address </td>
-                            <td>{{ $customer[0]->office_address_proof}}</td>
+                            <td></td>
                           </tr>
                         </table>
                       </div>
@@ -200,35 +199,35 @@
                     <table width="100%" class="dis_table" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         <td width="50%">Flat No.</td>
-                        <td width="50%">{{ $customer[0]->door_number}}</td>
+                        <td width="50%">{{ $customer['resi_Doorno']}}</td>
                       </tr>
                       <tr>
                         <td>Name of Premises</td>
-                        <td>{{ $customer[0]->building_name}}</td>
+                        <td>{{ $customer['resbuildingName']}}</td>
                       </tr>
                       <tr>
                         <td>Street</td>
-                        <td>{{ $customer[0]->street_name}}</td>
+                        <td>{{ $customer['resStreet']}}</td>
                       </tr>
                       <tr>
                         <td>Area</td>
-                        <td>{{ $customer[0]->street_name}}</td>
+                        <td>{{ $customer['resArea']}}</td>
                       </tr>
                       <tr>
                         <td>City</td>
-                        <td>{{ $customer[0]->city}}</td>
+                        <td>{{ $customer['res_city']}}</td>
                       </tr>
                       <tr>
                         <td>State</td>
-                        <td>{{ $customer[0]->state}}</td>
+                        <td>{{ $customer['resState']}}</td>
                       </tr>
                       <tr>
                         <td>Country</td>
-                        <td>&nbsp;</td>
+                        <td>{{ $customer['resCountry']}}</td>
                       </tr>
                       <tr>
                         <td>Pincode</td>
-                        <td>{{ $customer[0]->pin_code}}</td>
+                        <td>{{ $customer['resPincode']}}</td>
                       </tr>
                     </table>
                   </section>
@@ -282,7 +281,7 @@
                             <td width="64%"  id="applicationdate">I agree to STMC's Terms of Service</td>
                             <td width="30%"><div align="center">
                                 <button type="submit" class="btn btn-success" value="">Proceed to Payment</button>
-                                <a href="newpan" class="btn btn-danger" style="color:#fff;">Edit Form</a>
+                                <a href="/pan/new" class="btn btn-danger" style="color:#fff;">Edit Form</a>
                               </div></td>
                           </tr>
                         </table>
