@@ -99,11 +99,11 @@
                       <div class="form-group">
                         <label class="control-label col-xs-3">Name on the Pancard <span class="red">*</span>&nbsp;<a href="#" data-tooltip="Full abbreviated name to be printed on Pancard"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
                         <div class="col-xs-6">
-                          <input type="text" class="form-control" name="pancardFirstname" placeholder="First Name" id="full"  onchange="upperMe('print_first')" onblur="initialvalidation('print_middle');"  autocomplete="off" maxlength="50">
+                          <input type="text" class="form-control" name="panFirstName" placeholder="First Name" id="full"  onchange="upperMe('print_first')" onblur="initialvalidation('print_middle');"  autocomplete="off" maxlength="50">
                           <p class="red">(Name on the PAN Card should be based on the name of the applicant)</p>
                         </div>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="pancardLastname" id="printlast"   placeholder="Last Name" onchange="upperMe('print_last')" autocomplete="off"  onkeypress="return lettersOnly(event)">
+                          <input type="text" class="form-control" name="panLastName" id="printlast"   placeholder="Last Name" onchange="upperMe('print_last')" autocomplete="off"  onkeypress="return lettersOnly(event)">
                         </div>
                       </div>
                       <div class="form-group">
@@ -113,26 +113,26 @@
                        
                        <div id="details">
                           <div class="col-xs-3">
-                            <input type="text" class="form-control" name="other_name"  >
+                            <input type="text" class="form-control" name="otherName1">
                           </div>
                           <div class="col-xs-3">
-                            <input type="text" class="form-control" name="other_name"   >
+                            <input type="text" class="form-control" name="otherName2">
                           </div>
                           <div class="col-xs-3">
-                            <input type="text" class="form-control" name="other_name"     >
+                            <input type="text" class="form-control" name="otherName3">
                           </div></div>
                         
                       </div>
                       <div class="form-group">
                         <label class="control-label col-xs-3">Father's Name <a href="#" data-tooltip="Should not be prefixed with titles such as Shri, Smt, Kumari, Dr., Major, M/s etc and married women applicants should give only their Father's name and not Husband's name"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
                         <div class="col-xs-3">
-                          <input type="text" name="fathersFirstname" class="form-control"  value="" placeholder="First Name" required>
+                          <input type="text" name="fatherFirstName" class="form-control"  value="" placeholder="First Name" required>
                         </div>
                         <div class="col-xs-3">
-                          <input type="text" name="fathersMiddlename" class="form-control" value="" placeholder="Middle Name">
+                          <input type="text" name="fatherMiddleName" class="form-control" value="" placeholder="Middle Name">
                         </div>
                         <div class="col-xs-3">
-                          <input type="text" name="fathersLastname" class="form-control" value="" placeholder="Last Name">
+                          <input type="text" name="fatherLastName" class="form-control" value="" placeholder="Last Name">
                         </div>
                       </div>
                     </section>
@@ -151,26 +151,26 @@
                       <div class="form-group">
                         <label class="control-label col-xs-4">Email <span class="red">*</span> &nbsp;<a href="#" data-tooltip="Valid e-mail id to be provided so that applicant can be contacted in case of any discrepancy in the application and/or for receiving PAN through e-mail."><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
                         <div class="input-group col-xs-7">
-                          <input type="email" name="emailId" class="form-control" placeholder="Email" required>
+                          <input type="email" name="email" class="form-control" placeholder="Email" required>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-xs-4">Landline</label>
                         <div class="col-sm-2" style="padding:0px;">
-                          <input type="tel" name="std" class="form-control" placeholder="STD">
+                          <input type="tel" name="stdCode" class="form-control" placeholder="STD">
                         </div>
                         <div class="col-sm-5" style="padding:0px;">
-                          <input type="tel" name="landLine" class="form-control" placeholder="Landline" required>
+                          <input type="tel" name="landline" class="form-control" placeholder="Landline" required>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-xs-5">Communication <span class="red">*</span></label>
                         <div class="col-xs-7">
                           <label class="radio-inline">
-                          <input type="radio" name="communication" value="Residence">
+                          <input type="radio" name="communicationPref" value="Residence">
                           Residence</label>
                           <label class="radio-inline">
-                          <input type="radio" name="communication" value="Office" >
+                          <input type="radio" name="communicationPref" value="Office">
                           Office </label>
                         </div>
                       </div>
@@ -210,9 +210,8 @@
                       <div class="form-group">
                         <label class="control-label col-xs-5" style="padding-top:0px;">Address Proof <span class="red">*</span></label>
                         <div class="col-xs-7">
-                          <select class="form-control" name="Address Proof" required id="proofofresidence" onchange="residchange();replaceproofofresidence()">
-                            <option value="">Select the Address Proof</option>
-                         
+                          <select class="form-control" name="addressProof" required id="proofofresidence" onchange="residchange();replaceproofofresidence()">
+                            <option value="">Select the Address Proof</option>                         
                             <option value="Voters Identity Card">Voters Identity Card</option>
                             <option value="Driving License">Driving License</option>
                             <option value="Passport">Passport</option>
@@ -242,7 +241,7 @@
                       <div class="form-group">
                         <label class="control-label col-xs-5" style="padding-top:0px;">Date of Birth <span class="red">*</span></label>
                         <div class="col-xs-7">
-                          <select class="form-control" name="dateOfbirthProof" required id="dobproof" onchange="idhange();replaceproofofdob()">
+                          <select class="form-control" name="dobProof" required id="dobproof" onchange="idhange();replaceproofofdob()">
                             <option value="">Select the Proof for Date of Birth</option>
                             <option value="Birth Certificate issued by the Municipal Authority">Birth Certificate issued by the Municipal Authority</option>
                             <option value="Pension Payment Order">Pension Payment Order</option>
@@ -259,7 +258,7 @@
                       <div class="form-group">
                         <label class="control-label col-xs-5" style="padding-top:0px;">Office Address</label>
                         <div class="col-xs-7">
-                          <select class="form-control">
+                          <select class="form-control" name="offAddressProof">
                             <option value="">Select office Address Proof </option>
                             <option value="Credit Card Statement carrying Office Address">Credit Card Statement carrying Office Address </option>
                             <option value="Bank Account Statement carrying Office Address ">Bank Account Statement carrying Office Address </option>
@@ -362,7 +361,7 @@
                       <div class="form-group">
                         <label class="control-label col-xs-3">Flat/Room/Door/Block No.</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="resi_Doorno" placeholder="">
+                          <input type="text" class="form-control" name="resDoorNo" placeholder="">
                         </div>
                         <label class="control-label col-xs-3">Name of Office</label>
                         <div class="col-xs-3">
@@ -372,11 +371,11 @@
                       <div class="form-group">
                         <label class="control-label col-xs-3">Name of Premises/Building/Village</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="resbuildingName" placeholder="">
+                          <input type="text" class="form-control" name="resBuilding" placeholder="">
                         </div>
                         <label class="control-label col-xs-3">Flat/Room/Door/Block No.</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="off_Doorno">
+                          <input type="text" class="form-control" name="offDoorNo">
                         </div>
                       </div>
                       <div class="form-group">
@@ -396,7 +395,7 @@
                         </div>
                         <label class="control-label col-xs-3">Road/Street/Lane/Post Office</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="offStreetname" placeholder="">
+                          <input type="text" class="form-control" name="offStreet" placeholder="">
                         </div>
                       </div>
                       <div class="form-group">
@@ -406,15 +405,13 @@
                         </div>
                         <label class="control-label col-xs-3">Area/Locality/Taluka/Sub-Division</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="OffLocality" placeholder="">
+                          <input type="text" class="form-control" name="offArea" placeholder="">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-xs-3">Town/City/District</label>
-                        <div class="col-xs-3">
-                          
-                           <select id='secondlist' class="form-control" name="res_city"></select>
-                         
+                        <div class="col-xs-3">                          
+                           <select id='secondlist' class="form-control" name="resCity"></select>                         
                         </div>
                         <label class="control-label col-xs-3">State/Union Territory</label>
                         <div class="col-xs-3">
@@ -424,7 +421,7 @@
                       <div class="form-group">
                         <label class="control-label col-xs-3">Pincode</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="resPincode" placeholder="">
+                          <input type="text" class="form-control" name="resPinCode" placeholder="">
                         </div>
                         <label class="control-label col-xs-3">Town/City/District</label>
                         <div class="col-xs-3">

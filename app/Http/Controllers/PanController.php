@@ -22,7 +22,7 @@ class PanController extends Controller
     public function storeDetails(Request $request)
     {
         $request->session()->put('panuser', $request->all());
-        return redirect('pan/new/verify');
+        return redirect('pan/verify');
     }
     
     /*
@@ -51,6 +51,7 @@ class PanController extends Controller
     public function change() {
         return view('pages.pan-change');
     }
+   
 
 
 }

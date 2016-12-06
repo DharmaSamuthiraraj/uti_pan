@@ -11,7 +11,7 @@
               <div class="stepwizard-step"> <a href="#step-1" type="button" class="btn btn-default btn-circle" disabled="disabled">1</a>
                 <p>Fill your Details</p>
               </div>
-              <div class="stepwizard-step"> <a href="#step-2" type="button" class="btn btn-primary btn-circle" >2</a>
+              <div class="stepwizard-step"> <a href="#step-2" type="button" class="btn btn-primary btn-circle">2</a>
                 <p>Verify New Pan</p>
               </div>
               <div class="stepwizard-step"> <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
@@ -32,8 +32,8 @@
                       <table cellpadding="0" cellspacing="0" width="100%" border="0">
                         <tr>
                           <td><ul class="list">
-                              <li><img src="/images/yes.png" border="0" />Basic PAN Card Service <a href="#" data-tooltip="STMC would process your application without any Premium Services"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
-                              <li><img src="/images/yes.png" border="0" />Government Prescribed Fee <a href="#" data-tooltip="STMC would process your application without any Premium Services"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
+                              <li><img src="/images/yes.png" border="0"/>Basic PAN Card Service <a href="#" data-tooltip="STMC would process your application without any Premium Services"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
+                              <li><img src="/images/yes.png" border="0"/>Government Prescribed Fee <a href="#" data-tooltip="STMC would process your application without any Premium Services"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
                               <li>
                                 <input type="checkbox" id="premiumsupport" checked="checked" onclick="change()"  >
                                 </input>
@@ -100,18 +100,18 @@
                           </tr>
                           <tr>
                             <td>Name on the PAN Card</td>
-                            <td >{{ $customer['pancardFirstname'] .' '. $customer['pancardLastname']}}</td>
+                            <td >{{ $customer['panFirstName'] .' '. $customer['panLastName']}}</td>
                           <tr> 
                           <td>Any Other Name</td>
                             <td></td>
                           </tr>
                           <tr>
                             <td>Father's Name </td>
-                            <td>{{ $customer['fathersFirstname'] .' '.$customer['fathersMiddlename'] . ' ' . $customer['fathersLastname']}}</td>
+                            <td>{{ $customer['fatherFirstName'] .' '.$customer['fatherMiddleName'] . ' ' . $customer['fatherLastName']}}</td>
                           </tr>
                           <tr>
                             <td>Communication Address</td>
-                            <td>{{ $customer['communication']}}</td>
+                            <td>{{ $customer['communicationPref']}}</td>
                           </tr>
                           <tr>
                             <td>Annual Income</td>
@@ -143,11 +143,11 @@
                           </tr>
                           <tr>
                             <td>Email ID </td>
-                            <td>{{ $customer['emailId']}}</td>
+                            <td>{{ $customer['email']}}</td>
                           </tr>
                           <tr>
                             <td>Current City of Residence</td>
-                            <td>{{ $customer['res_city']}}</td>
+                            <td>{{ $customer['resCity']}}</td>
                           </tr>
                           <tr>
                             <td>Business Type</td>
@@ -155,7 +155,7 @@
                           </tr>
                           <tr>
                             <td>Land Line</td>
-                            <td>{{$customer['std'].'-'.$customer['landLine']}}</td>
+                            <td>{{$customer['stdCode'].'-'.$customer['landline']}}</td>
                           </tr>
                         </table>
                       </div>
@@ -176,15 +176,15 @@
                           </tr>
                           <tr>
                             <td>Proof of Residence Address </td>
-                            <td>{{$customer['Address_Proof']}}</td>
+                            <td>{{$customer['addressProof']}}</td>
                           </tr>
                           <tr>
                             <td>Proof of Date of Birth</td>
-                            <td>{{$customer['dateOfbirthProof']}}</td>
+                            <td>{{$customer['dobProof']}}</td>
                           </tr>
                           <tr>
                             <td>Proof of Office Address </td>
-                            <td></td>
+                            <td>{{$customer['offAddressProof']}}</td>
                           </tr>
                         </table>
                       </div>
@@ -199,11 +199,11 @@
                     <table width="100%" class="dis_table" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         <td width="50%">Flat No.</td>
-                        <td width="50%">{{ $customer['resi_Doorno']}}</td>
+                        <td width="50%">{{ $customer['resDoorNo']}}</td>
                       </tr>
                       <tr>
                         <td>Name of Premises</td>
-                        <td>{{ $customer['resbuildingName']}}</td>
+                        <td>{{ $customer['resBuilding']}}</td>
                       </tr>
                       <tr>
                         <td>Street</td>
@@ -215,7 +215,7 @@
                       </tr>
                       <tr>
                         <td>City</td>
-                        <td>{{ $customer['res_city']}}</td>
+                        <td>{{ $customer['resCity']}}</td>
                       </tr>
                       <tr>
                         <td>State</td>
@@ -227,7 +227,7 @@
                       </tr>
                       <tr>
                         <td>Pincode</td>
-                        <td>{{ $customer['resPincode']}}</td>
+                        <td>{{ $customer['resPinCode']}}</td>
                       </tr>
                     </table>
                   </section>
@@ -281,7 +281,7 @@
                             <td width="64%"  id="applicationdate">I agree to STMC's Terms of Service</td>
                             <td width="30%"><div align="center">
                                 <button type="submit" class="btn btn-success" value="">Proceed to Payment</button>
-                                <a href="/pan/new" class="btn btn-danger" style="color:#fff;">Edit Form</a>
+                                <a href="/pan/edit" class="btn btn-danger" style="color:#fff;">Edit Form</a>
                               </div></td>
                           </tr>
                         </table>

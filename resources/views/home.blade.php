@@ -12,7 +12,7 @@
           <div id="services-slider" class="owl-carousel">
                         <div class="item">
               <div class="services-black">
-                <div class="services-img"><img src="images/icon1.png" alt="Intra day Tips" /></div>
+                <div class="services-img"><img src="/images/icon1.png" alt="Intra day Tips" /></div>
                 <div class="service-bottom"></div>
                 <h2>Documents Required Lists</h2>
                 <p>Documents for proof of identity,Documents for proof of address, Documents for proof of date birth & Documents for proof of office address</p>
@@ -20,7 +20,7 @@
             </div>
                         <div class="item">
               <div class="services-black">
-                <div class="services-img"><img src="images/icon2.png" alt="Commodity Intra Tips" /></div>
+                <div class="services-img"><img src="/images/icon2.png" alt="Commodity Intra Tips" /></div>
                 <div class="service-bottom"></div>
                 <h2>Apply for a new PAN Card</h2>
                 <p>STMC facilitates you to apply for a new PAN Card in 3 simple steps. Individuals who have never applied for a PAN Card before and currently can apply online.</p>
@@ -28,7 +28,7 @@
             </div>
                         <div class="item">
               <div class="services-black">
-                <div class="services-img"><img src="images/icon3.png" alt="Stock Future Tips" /></div>
+                <div class="services-img"><img src="/images/icon3.png" alt="Stock Future Tips" /></div>
                 <div class="service-bottom"></div>
                 <h2>Changes/Correction in PAN Card</h2>
                 <p>Correction/Change in PAN card Applicant’s name, Correction of Father’s Name, Change in Birth date, Alteration of the address</p>
@@ -36,7 +36,7 @@
             </div>
                         <div class="item">
               <div class="services-black">
-                <div class="services-img"><img src="images/icon4.png" alt="Stock Option Tips" /></div>
+                <div class="services-img"><img src="/images/icon4.png" alt="Stock Option Tips" /></div>
                 <div class="service-bottom"></div>
                 <h2>Lost / Damaged PAN Card</h2>
                 <p>Those who wish to Reprint PAN card can submit a separate application. This is also made similar to that made for new PAN card application in Form 49A.</p>
@@ -52,8 +52,8 @@
       <div class="container">
                 <div class="row table-row">
           <div class="col-md-6 pad-both-none">
-            <div class="why-choose-img" style="background:url(images/about_bg.jpg) no-repeat center center; background-size:cover;">&nbsp;</div>
-            <div class="why-choose-img-mob"><img src="images/about_bg.jpg" class="img-responsive"  alt="Why Choose us" title="Why Choose us" /></div>
+            <div class="why-choose-img" style="background:url(/images/about_bg.jpg) no-repeat center center; background-size:cover;">&nbsp;</div>
+            <div class="why-choose-img-mob"><img src="/images/about_bg.jpg" class="img-responsive"  alt="Why Choose us" title="Why Choose us" /></div>
           </div>
           <div class="col-md-6 pad-l-50">
             <div class="why-choose-holder">
