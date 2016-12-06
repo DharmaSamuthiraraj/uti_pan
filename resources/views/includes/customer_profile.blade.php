@@ -23,7 +23,7 @@
             </div>
           </div>
           <div class="row setup-content" id="step-2">
-            <form name="new_pan" id="trial_form" role="form" class="form-horizontal" method="post" action="newpan_step3">
+            <form name="new_pan" id="trial_form" role="form" class="form-horizontal" method="post" action="/pan/payment">
               <div class="free-trail-form">
                 <section class="common-form">
                   <h2>PAYMENT SUMMARY</h2>
@@ -78,11 +78,24 @@
                             </div></td>
                         </tr>
                       </table>
+                        <br>
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="75%"  id="applicationdate">I agree to STMC's Terms of Service</td>
+                            <td width="25%"><div align="center">
+                                <button type="submit" class="btn btn-success" value="">Proceed to Payment</button>
+                                <a href="/pan/new" class="btn btn-danger" style="color:#fff;">Edit Form</a>
+                              </div></td>
+                          </tr>
+                        </table>
                     </div>
                   </div>
                   <br />
                 </section>
               </div>
+                <input type="hidden" name="normalAmt" value="107">
+               <input type="hidden" name="premiumAmt" value="221">
+            </form>
               <div class="free-trail-form">
                 <section class="common-form">
                   <h2>Personal Information</h2>
@@ -262,27 +275,6 @@
                             <td>City:</td>
                             <td id="citydown">&nbsp;</td>
                             <td><div align="center"></div></td>
-                          </tr>
-                        </table>
-                        <br>
-                        <div class="clearfix"></div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-              <div class="free-trail-form">
-                <section class="common-form">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                      <div class="form-content"> <br>
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                          <tr>
-                            <td width="64%"  id="applicationdate">I agree to STMC's Terms of Service</td>
-                            <td width="30%"><div align="center">
-                                <button type="submit" class="btn btn-success" value="">Proceed to Payment</button>
-                                <a href="/pan/edit" class="btn btn-danger" style="color:#fff;">Edit Form</a>
-                              </div></td>
                           </tr>
                         </table>
                         <br>

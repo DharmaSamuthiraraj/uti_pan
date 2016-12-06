@@ -44,10 +44,16 @@ class PanController extends Controller
         return view('pages.pan-lost');
     }
 
-    public function payment() {
-        return view('pages.pan-payment');
+    public function postPaymentSummary(Request $request) {
+        $request->session()->put('paymentSummary', $request->all());
+        return redirect('pan/payment');
     }
 
+    public function payment(Request $request) {
+        $paymentSummary = $request->session()->get('paymentSummary');
+        return view('pages.pan-payment')->with('paymentSummary', $paymentSummary);;
+    }
+    
     public function change() {
         return view('pages.pan-change');
     }

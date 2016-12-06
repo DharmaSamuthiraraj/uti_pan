@@ -36,7 +36,9 @@ Route::group(array('prefix' => 'pan'), function(){
 
 	Route::get('lost', 'PanController@lostOrDamage');
 
-	Route::get('payment', 'PanController@payment');
+	Route::post('payment', 'PanController@postPaymentSummary');
+
+    Route::get('payment', 'PanController@payment');
 
 	Route::get('change', 'PanController@change');
 
