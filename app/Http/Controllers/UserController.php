@@ -13,6 +13,100 @@ use Redirect;
 
 class UserController extends Controller
 {
+      
+    /*
+    * return new form page
+    */
+    public function showNewForm() {      
+        
+        return view('pages.pan-new', ['user' => array()]);
+    }
+
+    /*
+    * store pan details in session
+    */
+    public function storeDetails(Request $request) {
+
+    	if($request->input('uid') != '') {
+    		$uid = $request->input('uid');
+    		Session::forget('user');
+    	} else {
+    		$uid = uniqid();
+    	}  
+
+    	$user = $request->all();
+        $user['uid'] = $uid;
+    	Session::put('user', $user);        
+        return redirect('pan/verify/'.$uid);
+    }
+    
+    /*
+    * return verify page view
+    */
+    public function verify($uid) {
+        if(Session::has('user') && Session::get('user')['uid'] == $uid) {
+            $user =  Session::get('user');           
+            return view('pages.pan-verify', ['user' => $user]);
+        } 
+        return response('Invalid Id', 404)
+                  ->header('Content-Type', 'text/plain');  
+       
+    }
+
+    /*
+    * return Edit form page
+    */
+    public function showEditForm($uid) { 
+        if(Session::has('user') && Session::get('user')['uid'] == $uid) {
+            $user =  Session::get('user');             
+            return view('pages.pan-new', ['user' => $user]);
+        }
+
+        return response('Invalid Id', 404)
+                  ->header('Content-Type', 'text/plain');          
+        
+    }
+
+    /*
+    * return track page view
+    */
+    public function track() {
+        return view('pages.pan-track');
+    }
+
+    public function lostOrDamage() {
+        return view('pages.pan-lost');
+    }
+
+    public function postPayment(Request $request) {     	
+    	if(Session::has('user')) {
+    		$user = Session::get('user');
+    		$user['payment'] = $request->all();
+    		Session::forget('user');
+    		Session::put('user', $user);
+    		return redirect('pan/payment/'.$user['uid']);
+    	}
+         
+        return response('Invalid Id', 404)
+                  ->header('Content-Type', 'text/plain');        
+    }
+
+    public function paymentSummary($uid) {
+    	print $uid;
+    	if(Session::has('user') && Session::get('user')['uid'] == $uid) {
+    		$user = Session::get('user');
+    		$payment = $user['payment'];
+    		print_r($payment);
+        	return view('pages.pan-payment', ['payment' => $payment]);
+
+    	}
+        
+    }
+    
+    public function change() {
+        return view('pages.pan-change');
+    }
+
     /**
      * Store a new user.
      *
@@ -140,9 +234,4 @@ class UserController extends Controller
 	  }
     
   }
-	
-  /* public function showProfile() {
-	   $customer = Session::get( 'customer' );
-	   return view('newpan_step2')->with('customer', $customer);
-  }*/
 }

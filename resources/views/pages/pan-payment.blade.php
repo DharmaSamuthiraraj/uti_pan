@@ -16,21 +16,9 @@
         <div class="row">
           <div class="inner-wrapper">
             <div class="col-xs-12 content-block">
-            
-            
-              
-        
-            
-          
+  
              @include('includes.payment_gateway')
-          
-
-            
-             
-           
-        
-        
-              
+  
             </div>
           </div>
         </div>

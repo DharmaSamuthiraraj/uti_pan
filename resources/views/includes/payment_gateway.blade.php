@@ -26,8 +26,7 @@
           <div class="row setup-content" id="step-3">
            <div class="container">
            <br />
-            <h3>Total Amount: Rs.221</h3>
-
+            <h3>Total Amount: {{ $payment['premiumAmt'] }}</h3>
            </div>
 
           </div>

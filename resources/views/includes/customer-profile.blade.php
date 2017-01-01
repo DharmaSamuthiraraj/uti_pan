@@ -1,5 +1,5 @@
 <style type="text/css">
-#price2, #price4 {display:none;}
+  #price2, #price4 {display:none;}
 </style>
 <section class="aboutus-page">
   <div class="container">
@@ -84,7 +84,7 @@
                             <td width="75%"  id="applicationdate">I agree to STMC's Terms of Service</td>
                             <td width="25%"><div align="center">
                                 <button type="submit" class="btn btn-success" value="">Proceed to Payment</button>
-                                <a href="/pan/new" class="btn btn-danger" style="color:#fff;">Edit Form</a>
+                                <a href="/pan/edit/{{$user['uid']}}" class="btn btn-danger" style="color:#fff;">Edit Form</a>
                               </div></td>
                           </tr>
                         </table>
@@ -105,26 +105,26 @@
                         <table border="0" class="dis_table" cellspacing="0" cellpadding="0" width="100%">
                           <tr>
                             <td width="50%">Category of Applicant</td>
-                            <td width="50%" >{{$customer['category']}}</td>
+                            <td width="50%" >{{$user['category']}}</td>
                           </tr>
                           <tr>
                             <td valign="top">Name of the Applicant</td>
-                            <td>{{ $customer['firstName'] . ' '. $customer['middleName'] .' '. $customer['lastName']}}</td>
+                            <td>{{ $user['firstName'] . ' '. $user['middleName'] .' '. $user['lastName']}}</td>
                           </tr>
                           <tr>
                             <td>Name on the PAN Card</td>
-                            <td >{{ $customer['panFirstName'] .' '. $customer['panLastName']}}</td>
+                            <td >{{ $user['panFirstName'] .' '. $user['panLastName']}}</td>
                           <tr> 
                           <td>Any Other Name</td>
                             <td></td>
                           </tr>
                           <tr>
                             <td>Father's Name </td>
-                            <td>{{ $customer['fatherFirstName'] .' '.$customer['fatherMiddleName'] . ' ' . $customer['fatherLastName']}}</td>
+                            <td>{{ $user['fatherFirstName'] .' '.$user['fatherMiddleName'] . ' ' . $user['fatherLastName']}}</td>
                           </tr>
                           <tr>
                             <td>Communication Address</td>
-                            <td>{{ $customer['communicationPref']}}</td>
+                            <td>{{ $user['communicationPref']}}</td>
                           </tr>
                           <tr>
                             <td>Annual Income</td>
@@ -140,35 +140,35 @@
                         <table border="0" class="dis_table" cellspacing="0" cellpadding="0" width="100%">
                           <tr>
                             <td width="50%">Date of Birth</td>
-                            <td width="50%">{{$customer['date'].'-'.$customer['month'].'-'.$customer['year']}}</td>
+                            <td width="50%">{{$user['date'].'-'.$user['month'].'-'.$user['year']}}</td>
                           </tr>
                           <tr>
                             <td>Gender</td>
-                            <td>{{ $customer['gender']}}</td>
+                            <td>{{ $user['gender']}}</td>
                           </tr>
                           <tr>
                             <td>Marital Status</td>
-                            <td>{{ $customer['maritalStatus']}}</td>
+                            <td>{{ $user['maritalStatus']}}</td>
                           </tr>
                           <tr>
                             <td>Mobile </td>
-                            <td>{{ $customer['mobile']}}</td>
+                            <td>{{ $user['mobile']}}</td>
                           </tr>
                           <tr>
                             <td>Email ID </td>
-                            <td>{{ $customer['email']}}</td>
+                            <td>{{ $user['email']}}</td>
                           </tr>
                           <tr>
                             <td>Current City of Residence</td>
-                            <td>{{ $customer['resCity']}}</td>
+                            <td>{{ $user['resCity']}}</td>
                           </tr>
                           <tr>
                             <td>Business Type</td>
-                            <td>{{ $customer['incomeSource']}}</td>
+                            <td>{{ $user['incomeSource']}}</td>
                           </tr>
                           <tr>
                             <td>Land Line</td>
-                            <td>{{$customer['stdCode'].'-'.$customer['landline']}}</td>
+                            <td>{{$user['stdCode'].'-'.$user['landline']}}</td>
                           </tr>
                         </table>
                       </div>
@@ -185,19 +185,19 @@
                         <table border="0" class="dis_table" cellspacing="0" cellpadding="0" width="100%">
                           <tr>
                             <td width="50%">Proof of Identity </td>
-                            <td width="50%">{{$customer['idProof']}}</td>
+                            <td width="50%">{{$user['idProof']}}</td>
                           </tr>
                           <tr>
                             <td>Proof of Residence Address </td>
-                            <td>{{$customer['addressProof']}}</td>
+                            <td>{{$user['addressProof']}}</td>
                           </tr>
                           <tr>
                             <td>Proof of Date of Birth</td>
-                            <td>{{$customer['dobProof']}}</td>
+                            <td>{{$user['dobProof']}}</td>
                           </tr>
                           <tr>
                             <td>Proof of Office Address </td>
-                            <td>{{$customer['offAddressProof']}}</td>
+                            <td>{{$user['offAddressProof']}}</td>
                           </tr>
                         </table>
                       </div>
@@ -212,35 +212,35 @@
                     <table width="100%" class="dis_table" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         <td width="50%">Flat No.</td>
-                        <td width="50%">{{ $customer['resDoorNo']}}</td>
+                        <td width="50%">{{ $user['resDoorNo']}}</td>
                       </tr>
                       <tr>
                         <td>Name of Premises</td>
-                        <td>{{ $customer['resBuilding']}}</td>
+                        <td>{{ $user['resBuilding']}}</td>
                       </tr>
                       <tr>
                         <td>Street</td>
-                        <td>{{ $customer['resStreet']}}</td>
+                        <td>{{ $user['resStreet']}}</td>
                       </tr>
                       <tr>
                         <td>Area</td>
-                        <td>{{ $customer['resArea']}}</td>
+                        <td>{{ $user['resArea']}}</td>
                       </tr>
                       <tr>
                         <td>City</td>
-                        <td>{{ $customer['resCity']}}</td>
+                        <td>{{ $user['resCity']}}</td>
                       </tr>
                       <tr>
                         <td>State</td>
-                        <td>{{ $customer['resState']}}</td>
+                        <td>{{ $user['resState']}}</td>
                       </tr>
                       <tr>
                         <td>Country</td>
-                        <td>{{ $customer['resCountry']}}</td>
+                        <td>{{ $user['resCountry']}}</td>
                       </tr>
                       <tr>
                         <td>Pincode</td>
-                        <td>{{ $customer['resPinCode']}}</td>
+                        <td>{{ $user['resPinCode']}}</td>
                       </tr>
                     </table>
                   </section>

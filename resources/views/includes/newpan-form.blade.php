@@ -7,7 +7,7 @@
             <div class="stepwizard-row setup-panel">
         <div class="stepwizard-step">
             <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-            <p>Fill your Details</p>
+            <p>Fill your details</p>
         </div>
         <div class="stepwizard-step">
             <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
@@ -34,16 +34,16 @@
                         <label class="control-label col-xs-3">Category of Applicant <span class="red">*</span></label>
                         <div class="col-xs-6">
                           <label class="radio-inline">
-                          <input type="radio" name="category" checked value="Individuals" >
-                          Individuals </label>
+                          <input type="radio" name="category" value="Individuals" {{ isset($user['category']) && $user['category'] == 'Individuals' ? 'checked' : '' }}>
+                          Individuals</label>
                           <label class="radio-inline">
-                          <input type="radio"  name="category" value="Army" >
+                          <input type="radio"  name="category" value="Army" {{ isset($user['category']) && $user['category'] == 'Army' ? 'checked' : '' }}>
                           Army </label>
                           <label class="radio-inline">
-                          <input type="radio"  name="category" value="Navy" >
+                          <input type="radio"  name="category" value="Navy" {{ isset($user['category']) && $user['category'] == 'Navy' ? 'checked' : '' }}>
                           Navy </label>
                           <label class="radio-inline">
-                          <input type="radio"  name="category" value="Airforce">
+                          <input type="radio"  name="category" value="Airforce" {{ isset($user['category']) && $user['category'] == 'Airforce' ? 'checked' : '' }}>
                           Air Force </label>
                         </div>
                       </div>
@@ -51,15 +51,15 @@
                         <label class="control-label col-xs-3">Applicant Name <span class="red">*</span>&nbsp;<a href="#" data-tooltip="Please Do not use abbreviations in the first and last name / Sur Name"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
                         
                         <div class="col-xs-3">
-                   <input type="text" name="firstName" class="form-control"  placeholder="First Name" required id="first" onchange="upperMe('first')" autocomplete="off" onblur="initialvalidation('first');">
+                          <input type="text" name="firstName" class="form-control"  placeholder="First Name" required id="first" onchange="upperMe('first')" autocomplete="off" onblur="initialvalidation('first');" value="{{ $user['firstName'] or '' }}">
                           <p class="red">(Name should be exactly as per the ID proof)</p>
                         </div>
                         <div class="col-xs-3">
-                        <input type="text" name="lastName" class="form-control" onkeyUp="copyText2()"  placeholder="Last Name" required id="last" onchange="upperMe('last')" autocomplete="off" onblur="initialvalidation('last');">
+                        <input type="text" name="lastName" class="form-control" onkeyUp="copyText2()"  placeholder="Last Name" required id="last" onchange="upperMe('last')" autocomplete="off" onblur="initialvalidation('last');" value="{{ $user['lastName'] or '' }}">
                          
                         </div>
                         <div class="col-xs-3">
-  <input type="text" name="middleName" class="form-control" id="middle" onkeyUp="copyText()"   placeholder="Middle Name" required id="middle" onchange="upperMe('middle')" autocomplete="off"  onblur="initialvalidation('middle');">
+                            <input type="text" name="middleName" class="form-control" id="middle" onkeyUp="copyText()"   placeholder="Middle Name" required id="middle" onchange="upperMe('middle')" autocomplete="off"  onblur="initialvalidation('middle');" value="{{ $user['middleName'] or '' }}">
                         </div>
                       </div>
                       <div class="form-group">
@@ -67,8 +67,8 @@
                         <div class="col-xs-2">
                         
                         <select id="dobday" name="date" class="form-control"></select></div>
-		 <div class="col-xs-2"><select id="dobmonth" name="month"  class="form-control"></select></div>
-		 <div class="col-xs-2"><select id="dobyear" name="year" class="form-control"></select></div>
+                    		 <div class="col-xs-2"><select id="dobmonth" name="month"  class="form-control"></select></div>
+                    		 <div class="col-xs-2"><select id="dobyear" name="year" class="form-control"></select></div>
                          <!-- <div class="input-group date">
                             <input type="date" value="11-11-2016" name="dateOfbirth" class="form-control"  required>
                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span> </div>
@@ -78,10 +78,10 @@
                         <label class="control-label col-xs-3">Gender <span class="red">*</span></label>
                         <div class="col-xs-6">
                           <label class="radio-inline">
-                          <input type="radio"  name="gender" value="male">
+                          <input type="radio" name="gender" value="male" {{ isset($user['gender']) && $user['gender'] == 'male' ? 'checked' : '' }}>
                           Male</label>
                           <label class="radio-inline">
-                          <input type="radio" name="gender"  value="female" >
+                          <input type="radio" name="gender"  value="female" {{ isset($user['gender']) && $user['gender'] == 'female' ? 'checked' : '' }} >
                           Female</label>
                         </div>
                       </div>
@@ -89,50 +89,50 @@
                         <label class="control-label col-xs-3">Marital Status <span class="red">*</span></label>
                         <div class="col-xs-6">
                           <label class="radio-inline">
-                          <input type="radio" name="maritalStatus"  value="single" >
+                          <input type="radio" name="maritalStatus"  value="single" {{ isset($user['maritalStatus']) && $user['maritalStatus'] == 'single' ? 'checked' : '' }}>
                           Single</label>
                           <label class="radio-inline">
-                          <input type="radio" name="maritalStatus" value="married" >
+                          <input type="radio" name="maritalStatus" value="married" {{ isset($user['maritalStatus']) && $user['maritalStatus'] == 'married' ? 'checked' : '' }}>
                           Married</label>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-xs-3">Name on the Pancard <span class="red">*</span>&nbsp;<a href="#" data-tooltip="Full abbreviated name to be printed on Pancard"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
                         <div class="col-xs-6">
-                          <input type="text" class="form-control" name="panFirstName" placeholder="First Name" id="full"  onchange="upperMe('print_first')" onblur="initialvalidation('print_middle');"  autocomplete="off" maxlength="50">
+                          <input type="text" class="form-control" name="panFirstName" placeholder="First Name" id="full"  onchange="upperMe('print_first')" onblur="initialvalidation('print_middle');"  autocomplete="off" maxlength="50" value="{{ $user['panFirstName'] or '' }}">
                           <p class="red">(Name on the PAN Card should be based on the name of the applicant)</p>
                         </div>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="panLastName" id="printlast"   placeholder="Last Name" onchange="upperMe('print_last')" autocomplete="off"  onkeypress="return lettersOnly(event)">
+                          <input type="text" class="form-control" name="panLastName" id="printlast"   placeholder="Last Name" onchange="upperMe('print_last')" autocomplete="off"  onkeypress="return lettersOnly(event)" value="{{ $user['panLastName'] or '' }}">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-xs-3">Any Other Name <a href="#" data-tooltip="Please check the box if you have been known by any other name and providing details of other name is mandatory. Title should be simlar to the one provided in applicant name"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
-                        <input type="checkbox" id="chkbox" name="anyothername" value="" />
+                        <input type="checkbox" id="chkbox" name="anyothername" value="{{ $user['anyothername'] or '' }}" />
                         </label>
                        
                        <div id="details">
                           <div class="col-xs-3">
-                            <input type="text" class="form-control" name="otherName1">
+                            <input type="text" class="form-control" name="otherName1" value="{{ $user['otherName1'] or '' }}">
                           </div>
                           <div class="col-xs-3">
-                            <input type="text" class="form-control" name="otherName2">
+                            <input type="text" class="form-control" name="otherName2" value="{{ $user['otherName2'] or '' }}">
                           </div>
                           <div class="col-xs-3">
-                            <input type="text" class="form-control" name="otherName3">
+                            <input type="text" class="form-control" name="otherName3" value="{{ $user['otherName3'] or '' }}">
                           </div></div>
                         
                       </div>
                       <div class="form-group">
                         <label class="control-label col-xs-3">Father's Name <a href="#" data-tooltip="Should not be prefixed with titles such as Shri, Smt, Kumari, Dr., Major, M/s etc and married women applicants should give only their Father's name and not Husband's name"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
                         <div class="col-xs-3">
-                          <input type="text" name="fatherFirstName" class="form-control"  value="" placeholder="First Name" required>
+                          <input type="text" name="fatherFirstName" class="form-control"  value="{{ $user['fatherFirstName'] or ''}}" placeholder="First Name" required>
                         </div>
                         <div class="col-xs-3">
-                          <input type="text" name="fatherMiddleName" class="form-control" value="" placeholder="Middle Name">
+                          <input type="text" name="fatherMiddleName" class="form-control" value="{{ $user['fatherMiddleName'] or ''}}" placeholder="Middle Name">
                         </div>
                         <div class="col-xs-3">
-                          <input type="text" name="fatherLastName" class="form-control" value="" placeholder="Last Name">
+                          <input type="text" name="fatherLastName" class="form-control" value="{{ $user['fatherLastName'] or ''}}" placeholder="Last Name">
                         </div>
                       </div>
                     </section>
@@ -145,32 +145,32 @@
                       <div class="form-group">
                         <label class="control-label col-xs-4">Mobile <span class="red">*</span> &nbsp;<a href="#" data-tooltip="Application status updates are sent using the SMS facility on the mobile numbers mentioned in the application form. (applicable for Indian mobile numbers)."><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
                         <div class="input-group col-xs-7"> <span class="input-group-addon">+91</span>
-                          <input type="tel" name="mobile" required class="form-control" placeholder="Mobile">
+                          <input type="tel" name="mobile" required class="form-control" placeholder="Mobile" value="{{ $user['mobile'] or ''}}">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-xs-4">Email <span class="red">*</span> &nbsp;<a href="#" data-tooltip="Valid e-mail id to be provided so that applicant can be contacted in case of any discrepancy in the application and/or for receiving PAN through e-mail."><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
                         <div class="input-group col-xs-7">
-                          <input type="email" name="email" class="form-control" placeholder="Email" required>
+                          <input type="email" name="email" class="form-control" placeholder="Email" required value="{{ $user['email'] or ''}}">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-xs-4">Landline</label>
                         <div class="col-sm-2" style="padding:0px;">
-                          <input type="tel" name="stdCode" class="form-control" placeholder="STD">
+                          <input type="tel" name="stdCode" class="form-control" placeholder="STD" value="{{ $user['stdCode'] or ''}}">
                         </div>
                         <div class="col-sm-5" style="padding:0px;">
-                          <input type="tel" name="landline" class="form-control" placeholder="Landline" required>
+                          <input type="tel" name="landline" class="form-control" placeholder="Landline" required value="{{ $user['landline'] or ''}}">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-xs-5">Communication <span class="red">*</span></label>
                         <div class="col-xs-7">
                           <label class="radio-inline">
-                          <input type="radio" name="communicationPref" value="Residence">
+                          <input type="radio" name="communicationPref" value="Residence" {{ isset($user['communicationPref']) && $user['communicationPref'] == 'Residence' ? 'checked' : '' }}>
                           Residence</label>
                           <label class="radio-inline">
-                          <input type="radio" name="communicationPref" value="Office">
+                          <input type="radio" name="communicationPref" value="Office" {{ isset($user['communicationPref']) && $user['communicationPref'] == 'Office' ? 'checked' : '' }}>
                           Office </label>
                         </div>
                       </div>
@@ -186,7 +186,7 @@
                         <div class="col-xs-7">
                           <select class="form-control" name="idProof" required id="proofofidentity" onchange="selchange();replaceprrofid()">
                             <option value="">Select</option>
-                            <option value="Voters Identity Card">Voters Identity Card</option>
+                            <option value="Voters Identity Card" {{ isset($user['idProof']) && $user['idProof'] == 'Voters Identity Card' ? 'selected' : '' }}>Voters Identity Card</option>
                             <option value="Driving License">Driving License</option>
                             <option value="Passport">Passport</option>
                             <option value="Certificate of Identity signed by a Gazetted Officer in prescribed format only">Certificate of Identity signed by a Gazetted Officer in prescribed format only</option>
@@ -212,7 +212,7 @@
                         <div class="col-xs-7">
                           <select class="form-control" name="addressProof" required id="proofofresidence" onchange="residchange();replaceproofofresidence()">
                             <option value="">Select the Address Proof</option>                         
-                            <option value="Voters Identity Card">Voters Identity Card</option>
+                            <option value="Voters Identity Card" {{ isset($user['addressProof']) && $user['addressProof'] == 'Voters Identity Card' ? 'selected' : '' }}>Voters Identity Card</option>
                             <option value="Driving License">Driving License</option>
                             <option value="Passport">Passport</option>
                             <option value="Bank Account Statement">Bank Account Statement</option>
@@ -243,7 +243,7 @@
                         <div class="col-xs-7">
                           <select class="form-control" name="dobProof" required id="dobproof" onchange="idhange();replaceproofofdob()">
                             <option value="">Select the Proof for Date of Birth</option>
-                            <option value="Birth Certificate issued by the Municipal Authority">Birth Certificate issued by the Municipal Authority</option>
+                            <option value="Birth Certificate issued by the Municipal Authority" {{ isset($user['dobproof']) && $user['dobproof'] == 'Birth Certificate issued by the Municipal Authority' ? 'selected' : '' }}>Birth Certificate issued by the Municipal Authority</option>
                             <option value="Pension Payment Order">Pension Payment Order</option>
                             <option value="Marriage certificate issued by Registrar of Marriages">Marriage certificate issued by Registrar of Marriages</option>
                             <option value="Matriculation certificate">Matriculation certificate</option>
@@ -260,7 +260,7 @@
                         <div class="col-xs-7">
                           <select class="form-control" name="offAddressProof">
                             <option value="">Select office Address Proof </option>
-                            <option value="Credit Card Statement carrying Office Address">Credit Card Statement carrying Office Address </option>
+                            <option value="Credit Card Statement carrying Office Address" {{ isset($user['offAddressProof']) && $user['offAddressProof'] == 'Credit Card Statement carrying Office Address' ? 'selected' : '' }}>Credit Card Statement carrying Office Address </option>
                             <option value="Bank Account Statement carrying Office Address ">Bank Account Statement carrying Office Address </option>
                             <option value="Employer Certificate carrying Office Address">Employer Certificate carrying Office Address </option>
                             <option value="Electricity Bill carrying Office Address ">Electricity Bill carrying Office Address </option>
@@ -281,28 +281,28 @@
                       <div class="form-group">
                         <div class="col-xs-1"></div>
                         <label class="checkbox-inline col-xs-5">
-                        <input type="checkbox" id="checkbox" name="incomeSource" value="No Income">
+                        <input type="checkbox" id="checkbox" name="incomeSource" value="No Income" {{ isset($user['incomeSource']) && $user['incomeSource'] == 'No Income' ? 'checked' : '' }}>
                         No Income</label>
                         <label class="checkbox-inline col-xs-5">
-                        <input type="checkbox" id="discheckbox1" name="incomeSource"  value="Business Profession">
+                        <input type="checkbox" id="discheckbox1" name="incomeSource"  value="Business Profession" {{ isset($user['incomeSource']) && $user['incomeSource'] == 'Business Profession' ? 'checked' : '' }}>
                         Business/Profession</label>
                       </div>
                       <div class="form-group">
                         <div class="col-xs-1"></div>
                         <label class="checkbox-inline  col-xs-5">
-                        <input type="checkbox" id="discheckbox2" name="incomeSource" value="Salary">
+                        <input type="checkbox" id="discheckbox2" name="incomeSource" value="Salary" {{ isset($user['incomeSource']) && $user['incomeSource'] == 'Salary' ? 'checked' : '' }}>
                         Salary</label>
                         <label class="checkbox-inline  col-xs-5">
-                        <input type="checkbox" id="discheckbox3" name="incomeSource" value="House Property">
+                        <input type="checkbox" id="discheckbox3" name="incomeSource" value="House Property" {{ isset($user['incomeSource']) && $user['incomeSource'] == 'House Property' ? 'checked' : '' }}>
                         House Property</label>
                       </div>
                       <div class="form-group">
                         <div class="col-xs-1"></div>
                         <label class="checkbox-inline  col-xs-5">
-                        <input type="checkbox" id="discheckbox4" name="incomeSource" value="Capital Gains">
+                        <input type="checkbox" id="discheckbox4" name="incomeSource" value="Capital Gains" {{ isset($user['incomeSource']) && $user['incomeSource'] == 'Capital Gains' ? 'checked' : '' }}>
                         Capital Gains</label>
                         <label class="checkbox-inline  col-xs-5">
-                        <input type="checkbox" id="discheckbox5" name="incomeSource" value="Other Sources">
+                        <input type="checkbox" id="discheckbox5" name="incomeSource" value="Other Sources" {{ isset($user['incomeSource']) && $user['incomeSource'] == 'Other Sources' ? 'checked' : '' }}>
                         Other Sources</label>
                       </div>
                       <div class="form-group">
@@ -361,41 +361,41 @@
                       <div class="form-group">
                         <label class="control-label col-xs-3">Flat/Room/Door/Block No.</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="resDoorNo" placeholder="">
+                          <input type="text" class="form-control" name="resDoorNo" placeholder="" value="{{ $user['resDoorNo'] or '' }}">
                         </div>
                         <label class="control-label col-xs-3">Name of Office</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="officeName" placeholder="">
+                          <input type="text" class="form-control" name="officeName" placeholder="" value="{{ $user['officeName'] or '' }}">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-xs-3">Name of Premises/Building/Village</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="resBuilding" placeholder="">
+                          <input type="text" class="form-control" name="resBuilding" placeholder=""  value="{{ $user['resBuilding'] or '' }}">
                         </div>
                         <label class="control-label col-xs-3">Flat/Room/Door/Block No.</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="offDoorNo">
+                          <input type="text" class="form-control" name="offDoorNo"  value="{{ $user['offDoorNo'] or '' }}">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-xs-3">Road / Street / Lane / Post Office</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="resStreet" placeholder="">
+                          <input type="text" class="form-control" name="resStreet" placeholder=""  value="{{ $user['resStreet'] or '' }}">
                         </div>
                         <label class="control-label col-xs-3">Name of Premises/Building/Village</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="offBuilding" placeholder="">
+                          <input type="text" class="form-control" name="offBuilding" placeholder=""  value="{{ $user['offBuilding'] or '' }}">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-xs-3">Area/Locality/Taluka/Sub-Division </label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="resArea" placeholder="">
+                          <input type="text" class="form-control" name="resArea" placeholder=""  value="{{ $user['resArea'] or '' }}">
                         </div>
                         <label class="control-label col-xs-3">Road/Street/Lane/Post Office</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="offStreet" placeholder="">
+                          <input type="text" class="form-control" name="offStreet" placeholder=""  value="{{ $user['offStreet'] or '' }}">
                         </div>
                       </div>
                       <div class="form-group">
@@ -405,7 +405,7 @@
                         </div>
                         <label class="control-label col-xs-3">Area/Locality/Taluka/Sub-Division</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="offArea" placeholder="">
+                          <input type="text" class="form-control" name="offArea" placeholder=""  value="{{ $user['offArea'] or '' }}">
                         </div>
                       </div>
                       <div class="form-group">
@@ -421,7 +421,7 @@
                       <div class="form-group">
                         <label class="control-label col-xs-3">Pincode</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="resPinCode" placeholder="">
+                          <input type="text" class="form-control" name="resPinCode" placeholder=""  value="{{ $user['resPinCode'] or '' }}">
                         </div>
                         <label class="control-label col-xs-3">Town/City/District</label>
                         <div class="col-xs-3">
@@ -431,11 +431,11 @@
                       <div class="form-group">
                         <label class="control-label col-xs-3">Country</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="resCountry" placeholder="India" readonly="readonly">
+                          <input type="text" class="form-control" name="resCountry" placeholder="India" readonly="readonly"  value="{{ $user['resCountry'] or '' }}">
                         </div>
                         <label class="control-label col-xs-3">Pincode</label>
                         <div class="col-xs-3">
-                          <input type="text" class="form-control" name="offPincode" placeholder="">
+                          <input type="text" class="form-control" name="offPincode" placeholder=""  value="{{ $user['offPincode'] or '' }}">
                         </div>
                       </div>
                     </section>
@@ -525,8 +525,7 @@
                       </div></div>
                     </section>
                   </div>
-                </div>
-                
+                </div> 
                 
                 
                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -538,26 +537,27 @@
                      <p>I <span id='app_name'>________________________</span>, the applicant, in the capacity of do hereby declare that what is stated above is true to the best of my information and belief.</p>
 <p>Date: <span id='date'></span> City of residence<span id="blankline4">________________________ </span><span id="cityid1" style="text-decoration:underline;display:none;"> </span></p>
 <p class="red-color">* Mandatory. Please ensure the name in the ID Proof matches  <span id='app_name'>________________________</span>. If the name does not match, the application would not be accepted. </p>
-
-                      
+               
                       
                       
                      <div class="form-btn text-center">
                      
                      <button type="submit"  class="eq-button btn-theme4" value="">Submit</button>&nbsp;&nbsp;<button type="submit" class="eq-button btn-theme4" value="">Reset</button>
-                     </div> 
-                      
+                     </div>                      
                       
                     </section>
                   </div>
                 </div>
-              </form></div> 
- 
-           
+                <input type="hidden" name='uid' value="{{ $user['uid'] or '' }}"> 
+              </form>
+            </div>          
    			
             </div>
           </div>
         </div>
       </div>
     </section>
+
+  
+
   

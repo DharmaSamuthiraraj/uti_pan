@@ -25,22 +25,24 @@ Route::get('/documents', function () {
 
 
 Route::group(array('prefix' => 'pan'), function(){
+
+	Route::get('new', 'UserController@showNewForm');
 	
-	Route::get('new', 'PanController@getForm');
+	Route::get('edit/{uid}', 'UserController@showEditForm');
 
-	Route::post('new', 'PanController@storeDetails');
+	Route::post('new', 'UserController@storeDetails');
 
-	Route::get('verify', 'PanController@verify');
+	Route::get('verify/{uid}', 'UserController@verify');
 
-	Route::get('track', 'PanController@track');
+	Route::get('track', 'UserController@track');
 
-	Route::get('lost', 'PanController@lostOrDamage');
+	Route::get('lost', 'UserController@lostOrDamage');
 
-	Route::post('payment', 'PanController@postPaymentSummary');
+	Route::post('payment', 'UserController@postPayment');
 
-    Route::get('payment', 'PanController@payment');
+    Route::get('payment/{uid}', 'UserController@paymentSummary');
 
-	Route::get('change', 'PanController@change');
+	Route::get('change', 'UserController@change');
 
 });
 

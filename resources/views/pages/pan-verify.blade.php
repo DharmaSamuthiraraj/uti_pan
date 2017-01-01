@@ -1,6 +1,5 @@
 @extends('layouts.app')
-@section('content')
-  
+@section('content')  
     <div class="page-wrapper">
     <section class="header-panel">
       <div class="block-header-wrapper">
@@ -16,7 +15,7 @@
         <div class="row">
           <div class="inner-wrapper">
             <div class="col-xs-12 content-block">
-        		  @include('includes.customer_profile')
+        		  @include('includes.customer-profile')
             </div>
           </div>
         </div>
