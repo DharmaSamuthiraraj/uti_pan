@@ -48,18 +48,28 @@
                         </div>
                       </div>
                       <div class="form-group">
+                        <label class="control-label col-xs-3">Name on the Pancard <span class="red">*</span>&nbsp;<a href="#" data-tooltip="Full abbreviated name to be printed on Pancard"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
+                        <div class="col-xs-9">
+                          <input type="text" class="form-control" name="panFirstName" placeholder="First Name" id="full"  onchange="upperMe('print_first')" onblur="initialvalidation('print_middle');"  autocomplete="off" maxlength="50" value="{{ $user['panFirstName'] or '' }}">
+                          <p class="red">(Name on the PAN Card ex: MS. Kamala Kannan)</p>
+                        </div>
+                        <!--div class="col-xs-3">
+                          <input type="text" class="form-control" name="panLastName" id="printlast"   placeholder="Last Name" onchange="upperMe('print_last')" autocomplete="off"  onkeypress="return lettersOnly(event)" value="{{ $user['panLastName'] or '' }}">
+                        </div-->
+                      </div>
+                      <div class="form-group">
                         <label class="control-label col-xs-3">Applicant Name <span class="red">*</span>&nbsp;<a href="#" data-tooltip="Please Do not use abbreviations in the first and last name / Sur Name"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
                         
                         <div class="col-xs-3">
-                          <input type="text" name="firstName" class="form-control"  placeholder="First Name" required id="first" onchange="upperMe('first')" autocomplete="off" onblur="initialvalidation('first');" value="{{ $user['firstName'] or '' }}">
-                          <p class="red">(Name should be exactly as per the ID proof)</p>
-                        </div>
-                        <div class="col-xs-3">
-                        <input type="text" name="lastName" class="form-control" onkeyUp="copyText2()"  placeholder="Last Name" required id="last" onchange="upperMe('last')" autocomplete="off" onblur="initialvalidation('last');" value="{{ $user['lastName'] or '' }}">
+                          <input type="text" name="firstName" class="form-control"  placeholder="First Initial Expansion" required id="first" onchange="upperMe('first')" autocomplete="off" onblur="initialvalidation('first');" value="{{ $user['firstName'] or '' }}">
                          
                         </div>
                         <div class="col-xs-3">
-                            <input type="text" name="middleName" class="form-control" id="middle" onkeyUp="copyText()"   placeholder="Middle Name" required id="middle" onchange="upperMe('middle')" autocomplete="off"  onblur="initialvalidation('middle');" value="{{ $user['middleName'] or '' }}">
+                        <input type="text" name="lastName" class="form-control" onkeyUp="copyText2()"  placeholder="Second Initial Expansion" required id="last" onchange="upperMe('last')" autocomplete="off" onblur="initialvalidation('last');" value="{{ $user['lastName'] or '' }}">
+                         
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="text" name="middleName" class="form-control" id="middle" onkeyUp="copyText()"   placeholder="Applicant Full Name" required id="middle" onchange="upperMe('middle')" autocomplete="off"  onblur="initialvalidation('middle');" value="{{ $user['middleName'] or '' }}">
                         </div>
                       </div>
                       <div class="form-group">
@@ -96,16 +106,7 @@
                           Married</label>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label class="control-label col-xs-3">Name on the Pancard <span class="red">*</span>&nbsp;<a href="#" data-tooltip="Full abbreviated name to be printed on Pancard"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
-                        <div class="col-xs-6">
-                          <input type="text" class="form-control" name="panFirstName" placeholder="First Name" id="full"  onchange="upperMe('print_first')" onblur="initialvalidation('print_middle');"  autocomplete="off" maxlength="50" value="{{ $user['panFirstName'] or '' }}">
-                          <p class="red">(Name on the PAN Card should be based on the name of the applicant)</p>
-                        </div>
-                        <div class="col-xs-3">
-                          <input type="text" class="form-control" name="panLastName" id="printlast"   placeholder="Last Name" onchange="upperMe('print_last')" autocomplete="off"  onkeypress="return lettersOnly(event)" value="{{ $user['panLastName'] or '' }}">
-                        </div>
-                      </div>
+                      
                       <div class="form-group">
                         <label class="control-label col-xs-3">Any Other Name <a href="#" data-tooltip="Please check the box if you have been known by any other name and providing details of other name is mandatory. Title should be simlar to the one provided in applicant name"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
                         <input type="checkbox" id="chkbox" name="anyothername" value="{{ $user['anyothername'] or '' }}" />

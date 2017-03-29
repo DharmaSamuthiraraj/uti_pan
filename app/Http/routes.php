@@ -44,5 +44,7 @@ Route::group(array('prefix' => 'pan'), function(){
 
 	Route::get('change', 'UserController@change');
 
+	Route::get('pdfview', array('as'=>'pdfview','uses'=>'PanController@pdfview'));
+
 });
 

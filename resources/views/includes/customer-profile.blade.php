@@ -113,7 +113,7 @@
                           </tr>
                           <tr>
                             <td>Name on the PAN Card</td>
-                            <td >{{ $user['panFirstName'] .' '. $user['panLastName']}}</td>
+                            <td >{{ $user['panFirstName']}}</td>
                           <tr> 
                           <td>Any Other Name</td>
                             <td></td>

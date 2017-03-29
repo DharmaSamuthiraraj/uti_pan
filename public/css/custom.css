@@ -577,7 +577,7 @@ p.list-description {
   overflow: hidden;
   overflow-y: scroll;
 }
-.red {color:#ff0000 !important; font-size:8pt;}
+.red {color:#ff0000 !important; font-size:10pt;}
 .dropdate-select { font-size:12px; border-radius: 3px; border:1px solid #dcdcdc; line-height:30px; height:30px; color:#666; background:#f1f1f1; box-shadow: 0 1px 1px rgba(0, 0, 0, 0) inset, 0 0 8px rgba(0, 0, 0, 0); margin-right:5px;}
 
 
@@ -907,9 +907,14 @@ p.list-description {
   ul.list li {list-style:none; line-height:30px; padding-left:10px; }
   ul.list li img {padding-right:10px;}
   span.pl10  {padding-left:10px; color:#444;} .form-inline {margin-top:30px;} .light-color {color:#A2A2A2;}
-  .dis_table {font-size:12px; text-transform:uppercase; margin-bottom:20px; }
+  .dis_table {font-size:12px;  margin-bottom:20px; }
   .dis_table tr td { border:solid 1px #cacaca; padding:4px 10px;}
+  .dis_table tr td:first-child {font-weight:bold;}
   
   .pickup-address {background:#eee; border: solid 1px #e2e2e2; padding:10px;}
   #full, #printlast {text-transform: uppercase;}
+
+ @media print {
+  .noprint { display: none; }
+}
   

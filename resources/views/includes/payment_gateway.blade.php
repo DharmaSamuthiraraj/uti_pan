@@ -27,6 +27,8 @@
            <div class="container">
            <br />
             <h3>Total Amount: {{ $payment['premiumAmt'] }}</h3>
+
+            <h4 class="text-center"><a href="/pan/pdfview" class="btn btn-danger">Paid</a></h4>
            </div>
 
           </div>
